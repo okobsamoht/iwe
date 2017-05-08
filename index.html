@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GL</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">GL</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" data-toggle="modal" data-target="#modalClient">Ajouter Client</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#modalMoto">Ajouter Moto</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#modalLocation">Location</a></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<h3>&nbsp;</h3>
+<div class="container">
+  <div class="col-sm-4">
+    <h3>Locations</h3>
+
+  <div class="list-group" id="listLocation">
+
+  </div>    
+    <button class="btn btn-primary">Voir toutes les locations</button>
+  </div>
+  <div class="col-sm-4">
+    <h3>Clients</h3>
+
+  <div class="list-group" id="listClient">
+
+  </div>    
+  <button class="btn btn-primary">Voir tous les client</button>
+  </div>
+  <div class="col-sm-4">
+    <h3>Motos</h3>
+
+  <div class="list-group" id="listeMoto">
+
+  </div>     
+  <button class="btn btn-primary">Voir toutes les motos</button>
+  </div>
+</div>
+
+<!--##### ZONE DES MODALS POUR LES FORMULAIRES #####-->
+<!-- Modal -->
+<div class="modal fade" id="modalClient" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Nouveau Client</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">      
+        <form>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom du client">
+          </div>
+
+          <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom du client">
+          </div>
+
+          <div class="form-group">
+            <label for="prenom">Téléphone</label>
+            <input type="tel" class="form-control" id="telephone" name="telephone" placeholder="Téléphone du client">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email du client">
+          </div>
+
+          <div class="form-group">
+            <label for="adresse">Adresse</label>
+            <textarea class="form-control" id="adresse" name="adresse" placeholder="Adresse du client"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="statut">Statut</label>
+            <select class="form-control" id="statut" name="statut">
+              <option>Choisissez</option>
+              <option>Particulier</option>
+              <option>Entreprise</option>
+            </select>
+          </div>
+          </div>
+        </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary" id="saveClient">Enregister</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modalMoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Nouvelle Moto</h4>
+      </div>
+      <div class="modal-body">
+      <div class="row">
+        <form>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="marque">Marque</label>
+            <select class="form-control" id="marque" name="marque">
+              <option>Choisissez</option>
+              <option>YAMAHA</option>
+              <option>HONDA</option>
+              <option>TVS</option>
+              <option>SUZUKI</option>
+              <option>APSONIC</option>
+              <option>DAYANG</option>
+              <option>HAOJUE</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="model">Model</label>
+            <input type="text" class="form-control" id="model" name="model" placeholder="Model de moto">
+          </div>
+
+          <div class="form-group">
+            <label for="type">Type</label>
+            <select class="form-control" id="type" name="type">
+              <option>Choisissez</option>
+              <option>Moto Homme</option>
+              <option>Moto Dame</option>
+              <option>Moto Handicapé</option>
+            </select>
+          </div>
+          </div>
+          <div class="col-sm-6">
+          <div class="form-group">
+            <label for="prix">Prix</label>
+            <div class="input-group">
+              <input type="number" class="form-control" placeholder="Prix de la Moto" aria-describedby="prix">
+              <span class="input-group-addon" id="prix"> FCFA</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="number" class="form-control" id="nombre" name="nombre" placeholder="Nombre de moto">
+          </div>
+          </div>
+        </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary" id="saveMoto">Enregister</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modalLocation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Nouvelle Location</h4>
+      </div>
+      <div class="modal-body">
+      <div class="row">
+        <form>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="locClient">Client</label>
+            <select class="form-control" id="locClient" name="locClient">
+              <option>Choisissez</option>
+              <option>Thomas </option>
+              <option>Jislain</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="locMoto">Moto</label>
+            <select class="form-control" id="locMoto" name="locMoto">
+              <option>Choisissez</option>
+              <option>YAMAHA - DREAM</option>
+              <option>APSONIC - FLECHE</option>
+            </select>
+          </div>
+
+          </div>
+          <div class="col-sm-6">
+          <div class="form-group">
+            <label for="dataDebut">Date Début</label>
+            <input type="date" class="form-control" id="dataDebut" name="dataDebut" placeholder="Date de début de la location">
+          </div>
+
+          <div class="form-group">
+            <label for="dataFin">Date Fin</label>
+            <input type="date" class="form-control" id="dataFin" name="dataFin" placeholder="Date de fin de la location">
+          </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label for="duree" id="valDuree">Durée</label>
+              <input type="range" class="form-control" id="duree" name="duree" min="1" max="30" step="1">
+            </div>
+          </div>
+        </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary" id="saveLocation">Enregister</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+
+  </body>
+</html>
